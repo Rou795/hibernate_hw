@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="create-table-persons" author="ekukarskiy">
+        <createTable tableName="persons">
+            <column name="name" type="nvarchar(50)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_combo"/>
+            </column>
+            <column name="surname" type="nvarchar(50)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_combo"/>
+            </column>
+            <column name="age" type="int">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_combo"/>
+            </column>
+            <column name="phone_number" type="nvarchar(15)"/>
+            <column name="city_of_living" type="nvarchar(50)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="insert-initial-data-persons" author="ekukarskiy">
+        <insert tableName="persons">
+            <column name="name" value="Вячеслав"/>
+            <column name="surname" value="Лутошкин"/>
+            <column name="age" value="35"/>
+            <column name="phone_number" value="89256541256"/>
+            <column name="city_of_living" value="Москва"/>
+        </insert>
+        <insert tableName="persons">
+            <column name="name" value="Генрих"/>
+            <column name="surname" value="Прошин"/>
+            <column name="age" value="31"/>
+            <column name="phone_number" value="89256541251"/>
+            <column name="city_of_living" value="Барнаул"/>
+        </insert>
+        <insert tableName="persons">
+            <column name="name" value="Вячеслав"/>
+            <column name="surname" value="Зарин"/>
+            <column name="age" value="35"/>
+            <column name="phone_number" value="89256541256"/>
+            <column name="city_of_living" value="Минск"/>
+        </insert>
+        <insert tableName="persons">
+            <column name="name" value="Николай"/>
+            <column name="surname" value="Щеткин"/>
+            <column name="age" value="35"/>
+            <column name="phone_number" value="89256541256"/>
+            <column name="city_of_living" value="Днепропетровск"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
