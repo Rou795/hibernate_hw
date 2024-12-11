@@ -21,7 +21,7 @@ public class HibernateStudyController {
 
     @GetMapping("/persons/by-city")
     public List<Person> findAllByCityQuery(@RequestParam String city) {
-        return repository.findAllByCity(city);
+        return repository.findAllByCityQuery(city);
     }
 
     @GetMapping("/persons/by-age")
