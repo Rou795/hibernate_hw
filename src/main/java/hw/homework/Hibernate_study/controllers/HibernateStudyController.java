@@ -20,17 +20,17 @@ public class HibernateStudyController {
     }
 
     @GetMapping("/persons/by-city")
-    public List<Person> getPersonByCity(@RequestParam String city) {
+    public List<Person> findAllByCityQuery(@RequestParam String city) {
         return repository.findAllByCity(city);
     }
 
     @GetMapping("/persons/by-age")
-    public List<Person> getPersonByAge(@RequestParam Integer age) {
-        return repository.findAllByMainData_AgeLessThanOrderByMainData_AgeAsc(age);
+    public List<Person> getByLessThanAgeQuery(@RequestParam Integer age) {
+        return repository.findAllByLessThanAgeQuery(age);
     }
 
     @GetMapping("/persons/by-name-surname")
-    public List<Person> getPersonByAge(@RequestParam String name, @RequestParam String surname) {
-        return repository.findAllByMainData_NameAndMainData_Surname(name, surname);
+    public List<Person> getByNameAndSurname(@RequestParam String name, @RequestParam String surname) {
+        return repository.findAllByNameAndSurname(name, surname);
     }
 }
