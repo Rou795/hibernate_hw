@@ -16,7 +16,7 @@ public class Person {
 
     @Column(name = "city_of_living")
     @JdbcTypeCode(SqlTypes.NVARCHAR)
-    private String city_of_living;
+    private String city;
 
     @EmbeddedId
     @AttributeOverrides({
@@ -34,12 +34,12 @@ public class Person {
         this.mainData = mainData;
     }
 
-    public String getCity_of_living() {
-        return city_of_living;
+    public String getCity() {
+        return city;
     }
 
     public void setCity_of_living(String city_of_living) {
-        this.city_of_living = city_of_living;
+        this.city = city;
     }
 
     public String getPhone_number() {
@@ -54,11 +54,11 @@ public class Person {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Person person)) return false;
-        return Objects.equals(phone_number, person.phone_number) && Objects.equals(city_of_living, person.city_of_living) && Objects.equals(mainData, person.mainData);
+        return Objects.equals(phone_number, person.phone_number) && Objects.equals(city, person.city) && Objects.equals(mainData, person.mainData);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(phone_number, city_of_living, mainData);
+        return Objects.hash(phone_number, city, mainData);
     }
 }
